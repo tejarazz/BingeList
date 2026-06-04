@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Play button combined with a checkmark to represent a "Watchlist" -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,28 L34,80 L78,54 Z" /> <!-- Stylized Play Button -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,70 L60,65 L55,70 L70,85 L90,55 L85,50 Z" /> <!-- Checkmark Overlay -->
+</vector>
