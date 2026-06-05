@@ -19,14 +19,33 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("my-release-key.jks")
+            storePassword = "Tejarazz@2002" // Use the password you typed
+            keyAlias = "key0"
+            keyPassword = "Tejarazz@2002"  // Use the same password
+        }
+    }
+
     buildTypes {
         release {
+            // Enable R8 code shrinking, obfuscation, and optimization.
             isMinifyEnabled = true
+
+            // Enable resource shrinking, which is performed by the Android Gradle plugin.
             isShrinkResources = true
+
+            // Includes the default ProGuard rules files that are packaged with
+            // the Android Gradle plugin. To learn more, go to the section about
+            // R8 configuration files.
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            // Optional: Add signing configuration here for a fully signed build
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
